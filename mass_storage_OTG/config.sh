@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-
-source ./config.sh
-
 IMG_SIZE="50GiB"
 IMG_PATH="/piusb.bin"
 VOL_LABEL="PiUSB"
