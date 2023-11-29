@@ -4,6 +4,9 @@ VOL_LABEL="PiUSB"
 GMO_PARAM="stall=0 ro=1"
 LB_DEV="/dev/loop0"
 
+sudo losetup -D
+sudo modprobe -r g_mass_storage
+
 # Remove the file in case it already exists
 sudo rm $IMG_PATH
 
