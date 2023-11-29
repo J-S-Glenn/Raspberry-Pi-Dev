@@ -12,8 +12,11 @@ sudo fallocate -l $IMG_SIZE  $IMG_PATH
 # Create Partition
 echo "start=1, type=7" | sfdisk $IMG_PATH
 
+# Setup loopback device
+losetup -o 512 /dev/loop0 /piusb.bin
+
 # Create Filesystem
-sudo mkfs.ntfs -L $VOL_LABEL -F $IMG_PATH --fast
+sudo mkfs.ntfs -L $VOL_LABEL --fast -F /dev/loop0
 
 # Expose USB device
 sudo modprobe g_mass_storage file=$IMG_PATH
