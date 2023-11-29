@@ -11,7 +11,7 @@ sudo rm $IMG_PATH
 sudo fallocate -l $IMG_SIZE  $IMG_PATH
 
 # Create Partition
-sudo echo "start=1, type=7" | sfdisk $IMG_PATH
+sudo echo "start=1, type=7" | sudo sfdisk $IMG_PATH
 
 # Setup loopback device
 sudo losetup -o 512 $LB_DEV $IMG_PATH
