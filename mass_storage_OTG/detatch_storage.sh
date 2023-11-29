@@ -2,3 +2,4 @@
 source ./config.sh
 
 sudo umount $MOUNT_LOC
+sudo losetup -D
