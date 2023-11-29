@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+source ./config.sh
+
 MOUNT_LOC=/mnt/usb
 IMG_PATH="/piusb.bin"
 LB_DEV="/dev/loop0"

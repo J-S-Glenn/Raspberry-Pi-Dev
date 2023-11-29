@@ -1,8 +1,6 @@
-IMG_SIZE="50GiB"
-IMG_PATH="/piusb.bin"
-VOL_LABEL="PiUSB"
-GMO_PARAM="stall=0 ro=1"
-LB_DEV="/dev/loop0"
+#!/usr/bin/env bash
+
+source ./config.sh
 
 sudo losetup -D
 sudo modprobe -r g_mass_storage
@@ -24,7 +22,4 @@ sudo mkfs.ntfs -L $VOL_LABEL --fast -F $LB_DEV
 
 # Destroy loopback device
 sudo losetup -D
-
-# Expose USB device
-sudo modprobe g_mass_storage file=$IMG_PATH
 
