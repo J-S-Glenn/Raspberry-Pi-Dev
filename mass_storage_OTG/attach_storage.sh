@@ -2,10 +2,6 @@
 
 source ./config.sh
 
-MOUNT_LOC=/mnt/usb
-IMG_PATH="/piusb.bin"
-LB_DEV="/dev/loop0"
-
 # Setup loopback device
 sudo losetup -o 512 $LB_DEV $IMG_PATH
 
