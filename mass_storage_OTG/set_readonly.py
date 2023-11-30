@@ -11,4 +11,4 @@ access_flag = [0xA2, 0xA0, 0xD0, 0xEB, 0xE5, 0xB9, 0x33, 0x44,
 
 with open(fileName, "r+b") as fh:
     fh.seek(offset)
-    fh.write(bytes(access_flag_bytes))
+    fh.write(bytes(access_flag))
