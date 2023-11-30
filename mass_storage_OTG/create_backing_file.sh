@@ -21,4 +21,3 @@ sudo mkfs.ntfs -L $VOL_LABEL --fast -F $LB_DEV
 
 # Destroy loopback device
 sudo losetup -D
-
