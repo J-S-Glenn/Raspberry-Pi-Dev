@@ -21,6 +21,3 @@ sudo mkfs.ntfs -L $VOL_LABEL --fast -F $LB_DEV
 
 # Destroy loopback device
 sudo losetup -D
-
-# Update volume attributes to read only
-{ sudo head -c $READ_ONLY_GUID_START; sudo printf $READ_ONLY_GUID; sudo tail -c $READ_ONLY_GUID_END } > /piusb_ro.bin
