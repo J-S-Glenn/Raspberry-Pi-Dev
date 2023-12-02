@@ -1,4 +1,4 @@
-# Configure Raspberry Pi Zero W as NTFS USB Drive
+# Configure Raspberry Pi Zero W as FAT32 USB Drive
 
 This guide was created to provide step-by-step instructions
 to configure your Raspberry Pi W as a USB storage device.
