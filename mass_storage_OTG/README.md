@@ -10,7 +10,6 @@ Future improvements will include setting up a SAMBA server so that I can drop
 the files over the network.
 
 ## General Flow Overview
-## General Flow Overview
 * Backing File Setup
    1. Cleanup pre-existing backing file if it exists.
    2. Create backing file and format as FAT32 using the `mkfs.vfat` command.
