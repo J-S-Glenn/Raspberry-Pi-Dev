@@ -43,6 +43,7 @@ You can use the `losetup` command to see the currently active loopback devices.<
 3. Run `./activate_usb_device.sh` to expose the backing file as storage through the USB port.
 
 References:
+
 https://linuxlink.timesys.com/docs/wiki/engineering/HOWTO_Use_USB_Gadget_File_Storage
 https://magpi.raspberrypi.com/articles/pi-zero-w-smart-usb-flash-drive
 https://gist.github.com/kumbasar/49906cb704ce9213c972a3e008c74c0c
