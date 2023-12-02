@@ -11,13 +11,7 @@ sudo rm $IMG_PATH
 sudo fallocate -l $IMG_SIZE  $IMG_PATH
 
 # Create Partition
-sudo echo "start=1, type=7" | sudo sfdisk $IMG_PATH
-
-# Setup loopback device
-sudo losetup -o 512 $LB_DEV $IMG_PATH
+sudo echo "start=2048, type=b, bootable" | sudo sfdisk $IMG_PATH
 
 # Create Filesystem
-sudo mkfs.ntfs -L $VOL_LABEL --fast -F $LB_DEV
-
-# Destroy loopback device
-sudo losetup -D
+sudo mkfs.fat -F 32 -n $VOL_LABEL --mbr=no --offset=4 $IMG_PATH
