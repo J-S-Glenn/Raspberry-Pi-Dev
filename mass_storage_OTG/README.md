@@ -1,4 +1,4 @@
-# Configure Raspberry Pi Zero W as NTFS USB Drive
+# Configure Raspberry Pi Zero W as FAT32 USB Drive
 
 This guide was created to provide step-by-step instructions
 to configure your Raspberry Pi W as a USB storage device.
@@ -11,11 +11,8 @@ the files over the network.
 
 ## General Flow Overview
 * Backing File Setup
-   1. Create backing file
-   2. Create Partition
-   3. Setup loopback device*
-   4. Create Filesystem
-   5. Destroy loopback device
+   1. Cleanup pre-existing backing file if it exists.
+   2. Create backing file and format as FAT32 using the `mkfs.vfat` command.
 * Activating USB functionality
    1. Ensure nothing is accessing the backing file. It is not mounted and there is not a loopback device that is using it.
    2. Enable `g_mass_storage`
@@ -30,7 +27,7 @@ the files over the network.
 ## Quick Start:
 1. Update the variables in `config.sh`
 <div><table>
-<tr><td><strong>IMG_SIZE</strong>="50GiB"<td>Size of the image file to be created</td></tr>
+<tr><td><strong>IMG_SIZE_GB</strong>="50"<td>Size of the image file to be created in GB</td></tr>
 <tr><td><strong>IMG_PATH</strong>="/piusb.bin"<td>Image file name and location</td></tr>
 <tr><td><strong>VOL_LABEL</strong>="PiUSB"<td>USB device label when connected to a computer</td></tr>
 <tr><td><strong>GMO_PARAM</strong>="stall=0 ro=0"<td>modprobe command parameters sent when activating g_mass_storage</td></tr>
@@ -45,6 +42,7 @@ You can use the `losetup` command to see the currently active loopback devices.<
 3. Run `./activate_usb_device.sh` to expose the backing file as storage through the USB port.
 
 References:
+
 https://linuxlink.timesys.com/docs/wiki/engineering/HOWTO_Use_USB_Gadget_File_Storage
 https://magpi.raspberrypi.com/articles/pi-zero-w-smart-usb-flash-drive
 https://gist.github.com/kumbasar/49906cb704ce9213c972a3e008c74c0c
