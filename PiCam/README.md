@@ -1,0 +1,1 @@
+Goal: Setup a way to record timelapse videos of 3D printer
